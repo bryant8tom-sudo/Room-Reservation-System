@@ -3,7 +3,7 @@
 
 void RoomReservation::AddTeamMember(const std::string& student) {
   if (rooms_reserved_ == 0 || GetOccupantCount(rooms_reserved_ - 1) == room_capacity_) {
-    std::string* new_rooms = new std::string*[rooms_reserved_ + 1];
+    std::string** new_rooms = new std::string**[rooms_reserved_ + 1];
     for (int i = 0; i < rooms_reserved_; i++) {
       new_rooms[i] = rooms_[i];
     }
