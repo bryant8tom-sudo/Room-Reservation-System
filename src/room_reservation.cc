@@ -5,14 +5,14 @@ void RoomReservation::AddTeamMember(const std::string& student) {
   if (rooms_reserved_ == 0 || GetOccupantCount(rooms_reserved_ - 1) == room_capacity_) {
     std::string** new_rooms = new std::string**[rooms_reserved_ + 1];
     for (int i = 0; i < rooms_reserved_; i++) {
-      new_rooms[i] == rooms_[i];
+      new_rooms[i] = rooms_[i];
     }
     new_rooms[rooms_reserved_] = new std::string[room_capacity_];
     if (rooms_ != nullptr) {
       delete[] rooms_;
     }
     rooms_ = new_rooms;
-    rooms_resesrved_++;
+    rooms_reserved_++;
   }
   rooms_[rooms_reserved_ - 1][GetOccupantCount(rooms_reserved_ - 1)] = student;
   athlete_count_++;
